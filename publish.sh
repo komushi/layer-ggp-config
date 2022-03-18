@@ -5,7 +5,7 @@ source ./config.sh
 DESCRIPTION="GGP config layer for GoCheckIn"
 FILENAME=${LAYER_NAME}-${SYSTEM_NAME}
 
-aws s3api create-bucket --bucket ${BUCKET} --create-bucket-configuration LocationConstraint=ap-northeast-1
+aws s3api create-bucket --bucket ${BUCKET} --create-bucket-configuration LocationConstraint=ap-southeast-1
 
 aws s3api put-object --bucket ${BUCKET} --key layers/${FILENAME} --body ./tmp/layer.zip
 
