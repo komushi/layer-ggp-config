@@ -18,7 +18,7 @@ for REGION in $REGIONS; do
     --bucket ${BUCKET}-${REGION} --key layers/${FILENAME} && \
   aws lambda publish-layer-version --region $REGION --layer-name $FILENAME \
       --content S3Bucket=${BUCKET}-${REGION},S3Key=layers/${FILENAME} \
-      --compatible-runtimes "java8" \
+      --compatible-runtimes "java8" "java11" \
       --description "$DESCRIPTION" --query Version --output text
 done
 
